@@ -53,14 +53,6 @@ export function Hero() {
             >
               Message on Telegram
             </a>
-            <a
-              href={profileLinks.twitter.href}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-h-[48px] w-full items-center justify-center rounded-3xl border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition-[transform,border-color,background-color,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-acid/50 hover:bg-acid/10 hover:text-acid xs:flex-1 sm:w-auto sm:px-7 sm:text-base"
-            >
-              Follow on X
-            </a>
           </motion.div>
         </div>
         <motion.div

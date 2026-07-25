@@ -18,47 +18,18 @@ function IconMail({ className }: { className?: string }) {
   );
 }
 
-function IconCalendar({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-      <path d="M16 2v4M8 2v4M3 10h18" />
-    </svg>
-  );
-}
-
 type Variant = 'contact' | 'footer' | 'nav' | 'navInline';
-
 type Props = { variant: Variant; onNavigate?: () => void };
 
 export function SocialQuickLinks({ variant, onNavigate }: Props) {
   if (variant === 'navInline') {
     return (
       <div className="hidden items-center gap-0.5 md:flex">
-        <a
-          href={profileLinks.github.href}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2.5 text-zinc-400 transition-colors hover:bg-white/5 hover:text-acid"
-          aria-label="GitHub"
-        >
+        <a href={profileLinks.github.href} target="_blank" rel="noreferrer" className="rounded-xl p-2.5 text-zinc-400 transition-colors hover:bg-white/5 hover:text-acid" aria-label="GitHub">
           <IconGitHub className="h-5 w-5" />
         </a>
-        <a
-          href={profileLinks.email.href}
-          className="rounded-xl p-2.5 text-zinc-400 transition-colors hover:bg-white/5 hover:text-acid"
-          aria-label="Email Dillon"
-        >
+        <a href={profileLinks.email.href} className="rounded-xl p-2.5 text-zinc-400 transition-colors hover:bg-white/5 hover:text-acid" aria-label="Email">
           <IconMail className="h-5 w-5" />
-        </a>
-        <a
-          href={profileLinks.calendly.href}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-xl p-2.5 text-zinc-400 transition-colors hover:bg-white/5 hover:text-acid"
-          aria-label="Book a 30 minute Calendly call"
-        >
-          <IconCalendar className="h-5 w-5" />
         </a>
       </div>
     );
@@ -67,31 +38,9 @@ export function SocialQuickLinks({ variant, onNavigate }: Props) {
   if (variant === 'footer') {
     return (
       <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-zinc-400">
-        <a
-          href={profileLinks.github.href}
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-acid"
-        >
-          GitHub
-        </a>
-        <span className="text-zinc-600" aria-hidden>
-          ·
-        </span>
-        <a href={profileLinks.email.href} className="transition-colors hover:text-acid">
-          Email
-        </a>
-        <span className="text-zinc-600" aria-hidden>
-          ·
-        </span>
-        <a
-          href={profileLinks.calendly.href}
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-acid"
-        >
-          Calendly
-        </a>
+        <a href={profileLinks.github.href} target="_blank" rel="noreferrer" className="transition-colors hover:text-acid">GitHub</a>
+        <span className="text-zinc-600" aria-hidden>·</span>
+        <a href={profileLinks.email.href} className="transition-colors hover:text-acid">Email</a>
       </div>
     );
   }
@@ -99,37 +48,15 @@ export function SocialQuickLinks({ variant, onNavigate }: Props) {
   if (variant === 'nav') {
     return (
       <div className="mt-3 border-t border-white/10 pt-3">
-        <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
-          Connect
-        </p>
+        <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Connect</p>
         <div className="flex flex-col gap-0.5">
-          <a
-            href={profileLinks.github.href}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-200 active:bg-white/5"
-            onClick={onNavigate}
-          >
+          <a href={profileLinks.github.href} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-200 active:bg-white/5" onClick={onNavigate}>
             <IconGitHub className="h-4 w-4 shrink-0 text-zinc-400" />
             GitHub
           </a>
-          <a
-            href={profileLinks.email.href}
-            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-200 active:bg-white/5"
-            onClick={onNavigate}
-          >
+          <a href={profileLinks.email.href} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-200 active:bg-white/5" onClick={onNavigate}>
             <IconMail className="h-4 w-4 shrink-0 text-zinc-400" />
             Gmail
-          </a>
-          <a
-            href={profileLinks.calendly.href}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-200 active:bg-white/5"
-            onClick={onNavigate}
-          >
-            <IconCalendar className="h-4 w-4 shrink-0 text-zinc-400" />
-            Calendly · 30 min
           </a>
         </div>
       </div>
@@ -137,37 +64,14 @@ export function SocialQuickLinks({ variant, onNavigate }: Props) {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.14, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="mt-8 grid w-full gap-3 sm:mt-10 sm:grid-cols-3"
-    >
-      <a
-        href={profileLinks.github.href}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-zinc-100 transition-[border-color,background-color,color,transform] duration-300 hover:border-acid/40 hover:bg-acid/10 hover:text-acid"
-      >
+    <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.14, duration: 0.7, ease: [0.16, 1, 0.3, 1] }} className="mt-8 grid w-full gap-3 sm:mt-10 sm:grid-cols-2">
+      <a href={profileLinks.github.href} target="_blank" rel="noreferrer" className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-zinc-100 transition-[border-color,background-color,color,transform] duration-300 hover:border-acid/40 hover:bg-acid/10 hover:text-acid">
         <IconGitHub className="h-4 w-4 shrink-0 text-acid/80" />
         GitHub
       </a>
-      <a
-        href={profileLinks.email.href}
-        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-zinc-100 transition-[border-color,background-color,color,transform] duration-300 hover:border-acid/40 hover:bg-acid/10 hover:text-acid"
-      >
+      <a href={profileLinks.email.href} className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-zinc-100 transition-[border-color,background-color,color,transform] duration-300 hover:border-acid/40 hover:bg-acid/10 hover:text-acid">
         <IconMail className="h-4 w-4 shrink-0 text-acid/80" />
         Gmail
-      </a>
-      <a
-        href={profileLinks.calendly.href}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-zinc-100 transition-[border-color,background-color,color,transform] duration-300 hover:border-acid/40 hover:bg-acid/10 hover:text-acid sm:col-span-1"
-      >
-        <IconCalendar className="h-4 w-4 shrink-0 text-acid/80" />
-        Calendly
       </a>
     </motion.div>
   );

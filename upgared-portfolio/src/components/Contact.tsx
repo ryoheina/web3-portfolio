@@ -55,14 +55,6 @@ export function Contact() {
           >
             Telegram
           </a>
-          <a
-            href={profileLinks.twitter.href}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-3xl border border-white/15 px-6 py-4 text-base font-semibold text-white transition-[transform,border-color,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-white/40 hover:bg-white/5 sm:min-w-[220px] sm:w-auto"
-          >
-            X (Twitter)
-          </a>
         </motion.div>
         <SocialQuickLinks variant="contact" />
       </div>

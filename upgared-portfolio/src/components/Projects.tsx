@@ -109,16 +109,6 @@ export function Projects() {
                         Live
                       </a>
                     )}
-                    {project.repoUrl && (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-2.5 text-sm font-semibold text-white transition-[transform,border-color,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-acid/50 hover:text-acid xs:flex-initial sm:rounded-2xl"
-                      >
-                        Repository
-                      </a>
-                    )}
                   </div>
                 </div>
               </motion.article>
